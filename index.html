@@ -22,42 +22,59 @@
         a:hover {
             text-decoration: underline;
         }
+        .list-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .thumbnail {
+            flex-shrink: 0;
+            margin-right: 20px;
+        }
+        video {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 600px) {
+            .list-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .thumbnail {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <h1>Yuyang Tu</h1>
     <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. My research is about robotics and AI. This is a website to host my research project.</p>
     <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
-    <!-- 新添加的链接 -->
     <h1>Current Research</h1>
 
-
-
-
-
-        <div class="list-item publication" data-category="publication" style="display: flex; align-items: center;">
-            <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail" style="flex-shrink: 0; margin-right: 20px;">
-                <video width="320" height="240" autoplay loop muted style="display: block;">
-                    <source src="images/tooleenetpreview.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </a>
-            <div class="project-description">
-                <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
-                <p>
-                    Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
-                    <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
-                </p>
-            </div>
+    <div class="list-item publication" data-category="publication">
+        <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail">
+            <video width="320" height="240" autoplay loop muted playsinline>
+                <source src="images/tooleenetpreview.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </a>
+        <div class="project-description">
+            <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
+            <p>
+                Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
+                <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
+                <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
+            </p>
         </div>
+    </div>
 
-
-        <div class="list-item publication" data-category="publication" style="display: flex; align-items: center;">
-        <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail" style="flex-shrink: 0; margin-right: 20px;">
-            <video width="320" height="240" autoplay loop muted style="display: block;">
+    <div class="list-item publication" data-category="publication">
+        <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail">
+            <video width="320" height="240" autoplay loop muted playsinline>
                 <source src="images/posefusionpreview.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -74,11 +91,9 @@
         </div>
     </div>
 
-
-
-    <div class="list-item publication" data-category="publication" style="display: flex; align-items: center;">
-        <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail" style="flex-shrink: 0; margin-right: 20px;">
-            <video width="320" height="240" autoplay loop muted style="display: block;">
+    <div class="list-item publication" data-category="publication">
+        <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail">
+            <video width="320" height="240" autoplay loop muted playsinline>
                 <source src="images/capsulepreview.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
@@ -94,8 +109,6 @@
             </p>
         </div>
     </div>
-
-
 
     <p>Stay tuned for more updates!</p>
 </body>
