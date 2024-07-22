@@ -8,6 +8,10 @@
         body {
             font-family: Arial, sans-serif;
             margin: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         h1 {
             color: #333;
@@ -45,75 +49,92 @@
                 margin-bottom: 10px;
             }
         }
+        .avatar {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 25px; /* Adjusted to be one quarter the size */
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+        .container {
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <!-- people image -->
+    <!-- 头像图片 -->
     <img src="images/avatar.jpg" alt="Avatar" class="avatar">
-    <h1>Yuyang Tu</h1>
-    <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
-    <p>My research is about robotics and AI. This is a website to host my research project.</p>
-    <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
-    <h1>Current Research</h1>
+    
+    <div class="container">
+        <h1>Yuyang Tu</h1>
+        <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
+        <p>My research is about robotics and AI. This is a website to host my research project.</p>
+        <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
+        <h1>Current Research</h1>
 
-    <div class="list-item publication" data-category="publication">
-        <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail">
-            <video width="320" height="240" autoplay loop muted playsinline>
-                <source src="images/tooleenetpreview.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </a>
-        <div class="project-description">
-            <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
-            <p>
-                Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
-                <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
-                <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
-            </p>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail">
+                <video width="320" height="240" autoplay loop muted playsinline>
+                    <source src="images/tooleenetpreview.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
+                <p>
+                    Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
+                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
+                    <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="list-item publication" data-category="publication">
-        <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail">
-            <video width="320" height="240" autoplay loop muted playsinline>
-                <source src="images/posefusionpreview.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </a>
-        <div class="project-description">
-            <h3><a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM</a></h3>
-            <p>
-                Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tactile sensing.<br>
-                <font color="49bf9"><i>&#9733; Oral Presentation, IROS2023 &#9733;</i></font><br>
-                <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://arxiv.org/pdf/2304.04523">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=EmsGwhWU5y8">Video</a>
-            </p>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail">
+                <video width="320" height="240" autoplay loop muted playsinline>
+                    <source src="images/posefusionpreview.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM</a></h3>
+                <p>
+                    Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tactile sensing.<br>
+                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2023 &#9733;</i></font><br>
+                    <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://arxiv.org/pdf/2304.04523">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=EmsGwhWU5y8">Video</a>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <div class="list-item publication" data-category="publication">
-        <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail">
-            <video width="320" height="240" autoplay loop muted playsinline>
-                <source src="images/capsulepreview.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </a>
-        <div class="project-description">
-            <h3><a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Learning Friction Model for Magnet-actuated Tethered Capsule Robot</a></h3>
-            <p>
-                Keywords: tethered capsule robot, magnetic actuation, friction model.<br>
-                <font color="49bf9"><i>&#9733; Oral Presentation, ICRA2022 &#9733;</i></font><br>
-                <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://ieeexplore.ieee.org/document/9811587">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                <a href="https://www.youtube.com/watch?v=FCPhjHXal3M&t=4s">Video</a>
-            </p>
+        <div class="list-item publication" data-category="publication">
+            <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail">
+                <video width="320" height="240" autoplay loop muted playsinline>
+                    <source src="images/capsulepreview.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </a>
+            <div class="project-description">
+                <h3><a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Learning Friction Model for Magnet-actuated Tethered Capsule Robot</a></h3>
+                <p>
+                    Keywords: tethered capsule robot, magnetic actuation, friction model.<br>
+                    <font color="49bf9"><i>&#9733; Oral Presentation, ICRA2022 &#9733;</i></font><br>
+                    <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://ieeexplore.ieee.org/document/9811587">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+                    <a href="https://www.youtube.com/watch?v=FCPhjHXal3M&t=4s">Video</a>
+                </p>
+            </div>
         </div>
-    </div>
 
-    <p>Stay tuned for more updates!</p>
+        <p>Stay tuned for more updates!</p>
+    </div>
 </body>
 </html>
+
 
