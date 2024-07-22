@@ -13,8 +13,23 @@
             align-items: center;
             justify-content: center;
         }
-        h1 {
+        .header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+        }
+        .header h1 {
             color: #333;
+            margin: 0;
+        }
+        .header img {
+            width: 100px; /* Adjusted size for better visibility */
+            height: 100px;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
         p {
             color: #666;
@@ -49,27 +64,18 @@
                 margin-bottom: 10px;
             }
         }
-        .avatar {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            width: 25px; /* Adjusted to be one quarter the size */
-            height: 25px;
-            border-radius: 50%;
-            border: 2px solid #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-        }
         .container {
             text-align: center;
         }
     </style>
 </head>
 <body>
-    <!-- 头像图片 -->
-    <img src="images/avatar.jpg" alt="Avatar" class="avatar">
-    
-    <div class="container">
+    <div class="header">
         <h1>Yuyang Tu</h1>
+        <img src="images/avatar.jpg" alt="Avatar">
+    </div>
+
+    <div class="container">
         <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
         <p>My research is about robotics and AI. This is a website to host my research project.</p>
         <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
@@ -136,5 +142,6 @@
     </div>
 </body>
 </html>
+
 
 
