@@ -15,21 +15,23 @@
             justify-content: center;
         }
         .header {
-            width: 70%; /* 将宽度调整为70%以使内容向中间缩 */
+            width: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 40px; /* 增加底部间距 */
+            flex-direction: column; /* 改为纵向排列 */
+            align-items: center; /* 内容居中 */
+            margin-bottom: 40px; /* 底部间距 */
         }
         .header h1 {
             color: #333;
             margin: 0;
+            text-align: center; /* 文本居中 */
         }
         .header img {
             width: 300px; /* 调整图片大小 */
             height: 220px;
             border: 2px solid #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+            margin-top: 20px; /* 图片与标题间距 */
         }
         p {
             color: #666;
@@ -100,7 +102,7 @@
                 <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
                 <p>
                     Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation (top 12%), IROS2024 &#9733;</i></font><br>
+                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
                     <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                     <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                     <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
@@ -150,6 +152,7 @@
     </div>
 </body>
 </html>
+
 
 
 
