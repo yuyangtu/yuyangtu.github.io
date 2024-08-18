@@ -15,20 +15,23 @@
             justify-content: center;
         }
         .header {
-            width: 100%;
+            width: 80%; /* 调整宽度 */
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: relative;
+            justify-content: center; /* 保证内容水平居中 */
+            align-items: center; /* 保证垂直居中 */
+            margin-bottom: 40px;
         }
-        .header h1 {
-            color: #333;
-            margin: 0;
+        .header .text {
+            flex: 1;
+            padding-right: 20px; /* 调整文字和图片之间的间距 */
+        }
+        .header .image {
+            flex: 1;
+            text-align: right;
         }
         .header img {
-            width: 320px; /* Adjusted size for better visibility */
-            height: 240px;
-            /* Removed border-radius to make it square */
+            width: 320px; /* 调整图片大小 */
+            height: auto;
             border: 2px solid #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
@@ -41,6 +44,10 @@
         }
         a:hover {
             text-decoration: underline;
+        }
+        .container {
+            width: 80%; /* 调整宽度 */
+            text-align: left; /* 调整内容对齐方式 */
         }
         .list-item {
             display: flex;
@@ -56,6 +63,18 @@
             height: auto;
         }
         @media (max-width: 600px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+            .header .text,
+            .header .image {
+                flex: none;
+                text-align: center;
+            }
+            .header .image {
+                margin-top: 20px;
+            }
             .list-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -65,21 +84,22 @@
                 margin-bottom: 10px;
             }
         }
-        .container {
-            text-align: center;
-        }
     </style>
 </head>
 <body>
     <div class="header">
-        <h1>Yuyang Tu</h1>
-        <img src="images/avatar.jpg" alt="Avatar">
+        <div class="text">
+            <h1>Yuyang Tu</h1>
+            <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg.</p>
+            <p>My research is about robotics and AI. This is a website to host my research project.</p>
+            <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
+        </div>
+        <div class="image">
+            <img src="images/avatar.jpg" alt="Avatar">
+        </div>
     </div>
 
     <div class="container">
-        <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
-        <p>My research is about robotics and AI. This is a website to host my research project.</p>
-        <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
         <h1>Current Research</h1>
 
         <div class="list-item publication" data-category="publication">
@@ -143,6 +163,7 @@
     </div>
 </body>
 </html>
+
 
 
 
