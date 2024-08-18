@@ -15,23 +15,19 @@
             justify-content: center;
         }
         .header {
-            width: 80%; /* 调整宽度 */
+            width: 70%; /* 将宽度调整为70%以使内容向中间缩 */
             display: flex;
-            justify-content: center; /* 保证内容水平居中 */
-            align-items: center; /* 保证垂直居中 */
-            margin-bottom: 40px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px; /* 增加底部间距 */
         }
-        .header .text {
-            flex: 1;
-            padding-right: 20px; /* 调整文字和图片之间的间距 */
-        }
-        .header .image {
-            flex: 1;
-            text-align: right;
+        .header h1 {
+            color: #333;
+            margin: 0;
         }
         .header img {
-            width: 320px; /* 调整图片大小 */
-            height: auto;
+            width: 300px; /* 调整图片大小 */
+            height: 220px;
             border: 2px solid #fff;
             box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
         }
@@ -46,8 +42,8 @@
             text-decoration: underline;
         }
         .container {
-            width: 80%; /* 调整宽度 */
-            text-align: left; /* 调整内容对齐方式 */
+            width: 80%; /* 控制下方内容的宽度 */
+            text-align: center;
         }
         .list-item {
             display: flex;
@@ -67,12 +63,7 @@
                 flex-direction: column;
                 align-items: center;
             }
-            .header .text,
-            .header .image {
-                flex: none;
-                text-align: center;
-            }
-            .header .image {
+            .header img {
                 margin-top: 20px;
             }
             .list-item {
@@ -88,18 +79,14 @@
 </head>
 <body>
     <div class="header">
-        <div class="text">
-            <h1>Yuyang Tu</h1>
-            <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg.</p>
-            <p>My research is about robotics and AI. This is a website to host my research project.</p>
-            <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
-        </div>
-        <div class="image">
-            <img src="images/avatar.jpg" alt="Avatar">
-        </div>
+        <h1>Yuyang Tu</h1>
+        <img src="images/avatar.jpg" alt="Avatar">
     </div>
 
     <div class="container">
+        <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
+        <p>My research is about robotics and AI. This is a website to host my research project.</p>
+        <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
         <h1>Current Research</h1>
 
         <div class="list-item publication" data-category="publication">
@@ -113,7 +100,7 @@
                 <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
                 <p>
                     Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2024 &#9733;</i></font><br>
+                    <font color="49bf9"><i>&#9733; Oral Presentation (top 12%), IROS2024 &#9733;</i></font><br>
                     <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                     <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
                     <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
@@ -163,6 +150,7 @@
     </div>
 </body>
 </html>
+
 
 
 
