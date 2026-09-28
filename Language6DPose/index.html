@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Language-Embedded 6D Pose Estimation for Tool Manipulation | Yuyang Tu</title>
+  <meta name="description" content="Language and 3D geometry for estimating the 6D pose of task-relevant tool parts. Research by Yuyang Tu and colleagues, IEEE RA-L 2025.">
+  <link rel="canonical" href="https://yuyangtu.github.io/Language6DPose/">
+  <link rel="stylesheet" href="../research/project.css">
+  <script src="../research/media.js" defer></script>
+</head>
+<body>
+<main>
+  <a class="back" href="../">&larr; Yuyang Tu &middot; All research</a>
+  <header>
+    <h1>Language-Embedded 6D Pose Estimation<br>for Tool Manipulation</h1>
+    <p class="authors">Yuyang Tu, Yunlong Wang, Hui Zhang, Wenkai Chen, Jianwei Zhang</p>
+    <p class="affiliation">University of Hamburg</p>
+    <p class="badge published"><img class="icon" src="../research/icons/award.svg" width="20" height="20" alt="" aria-hidden="true">IEEE Robotics and Automation Letters (RA-L), 2025</p>
+    <nav class="resource-links resource-tiles" aria-label="Project resources"><a class="resource-link resource-tile" href="https://doi.org/10.1109/LRA.2025.3587559"><img class="icon" src="../research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper<small>IEEE RA-L 2025</small></span></a>
+<a class="resource-link resource-tile" href="#demonstrations"><img class="icon" src="../research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Demonstrations<small>Real-robot experiments</small></span></a>
+<a class="resource-link resource-tile" href="https://language6dpose.github.io/"><img class="icon" src="../research/icons/dataset.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Dataset<small>Access & usage terms</small></span></a></nav>
+  </header>
+  <p class="intro">A tool can serve different tasks through different functional parts. We combine natural language instructions with a 3D point cloud to estimate the 6D pose of the part that matters for the task.</p>
+  <figure class="overview">
+    <img src="assets/overview.jpg" width="1600" height="860" alt="Language identifies a tool and functional part; a diffusion model combines its semantic embedding with a point cloud to estimate a task-relevant 6D pose.">
+    <figcaption>From a language instruction to the pose of a functional part, and then to robot tool manipulation.</figcaption>
+  </figure>
+  <h2>Core idea</h2>
+  <div class="steps">
+    <article><h3>1. Identify the part</h3><p>Interpret the instruction to identify the tool, its function, and the part needed for the task.</p></article>
+    <article><h3>2. Estimate its pose</h3><p>Condition a diffusion-based pose estimator on language embeddings and the observed 3D point cloud.</p></article>
+    <article><h3>3. Use the tool</h3><p>Use the estimated functional-part pose as a reference for downstream manipulation.</p></article>
+  </div>
+  <h2 id="demonstrations">Real-robot demonstrations</h2>
+  <p>The same idea supports different task-relevant parts, including a mug handle and a wrench head.</p>
+  <div class="preview-controls"><button type="button" data-preview-toggle>Pause previews</button></div>
+  <div class="demos">
+    <figure>
+      <video autoplay loop muted playsinline controls preload="metadata" poster="assets/hanging-mug.jpg?v=clean" aria-label="Real-robot demonstration of hanging a mug">
+        <source src="assets/hanging-mug.mp4?v=clean" type="video/mp4">
+        <a href="assets/hanging-mug.mp4">Watch the mug demonstration</a>
+      </video>
+      <figcaption><strong>Hanging a mug.</strong> The handle provides the task-relevant pose.</figcaption>
+    </figure>
+    <figure>
+      <video autoplay loop muted playsinline controls preload="metadata" poster="assets/locating-wrench.jpg?v=clean" aria-label="Real-robot demonstration of locating a wrench">
+        <source src="assets/locating-wrench.mp4?v=clean" type="video/mp4">
+        <a href="assets/locating-wrench.mp4">Watch the wrench demonstration</a>
+      </video>
+      <figcaption><strong>Locating a wrench.</strong> The wrench head defines the interaction pose.</figcaption>
+    </figure>
+  </div>
+  <h2>Data and evaluation</h2>
+  <p>The work introduces a synthetic dataset with annotated 6D poses of tool functional parts. Experiments evaluate category-level pose estimation and demonstrate task execution on a real robot. The <a href="https://language6dpose.github.io/">dataset page</a> provides access information and usage terms.</p>
+  <h2>Publication</h2>
+  <p class="reference">Yuyang Tu, Yunlong Wang, Hui Zhang, Wenkai Chen, and Jianwei Zhang. &ldquo;Language-Embedded 6D Pose Estimation for Tool Manipulation.&rdquo; <em>IEEE Robotics and Automation Letters</em>, 10(9), 8618&ndash;8625, 2025. <a href="https://doi.org/10.1109/LRA.2025.3587559">doi:10.1109/LRA.2025.3587559</a>.</p>
+  <footer><a href="../">Back to Yuyang Tu&rsquo;s homepage</a></footer>
+</main>
+</body>
+</html>

@@ -1,160 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="Bi_FbIFqO6bP_XY6ECRkfiLq_AsdZ5TDvm92_7AcDWQ" />
-    <title>Yuyang Tu</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 40px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .header {
-            width: 100%;
-            display: flex;
-            flex-direction: column; /* 改为纵向排列 */
-            align-items: center; /* 内容居中 */
-            margin-bottom: 40px; /* 底部间距 */
-        }
-        .header h1 {
-            color: #333;
-            margin: 0;
-            text-align: center; /* 文本居中 */
-        }
-        .header img {
-            width: 300px; /* 调整图片大小 */
-            height: 220px;
-            border: 2px solid #fff;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-            margin-top: 20px; /* 图片与标题间距 */
-        }
-        p {
-            color: #666;
-        }
-        a {
-            color: #007bff;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-        .container {
-            width: 80%; /* 控制下方内容的宽度 */
-            text-align: center;
-        }
-        .list-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-        .thumbnail {
-            flex-shrink: 0;
-            margin-right: 20px;
-        }
-        video {
-            max-width: 100%;
-            height: auto;
-        }
-        @media (max-width: 600px) {
-            .header {
-                flex-direction: column;
-                align-items: center;
-            }
-            .header img {
-                margin-top: 20px;
-            }
-            .list-item {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .thumbnail {
-                margin-right: 0;
-                margin-bottom: 10px;
-            }
-        }
-    </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="google-site-verification" content="Bi_FbIFqO6bP_XY6ECRkfiLq_AsdZ5TDvm92_7AcDWQ">
+  <meta name="description" content="Yuyang Tu's research in robotics and AI: motion planning, tool manipulation, and multimodal perception.">
+  <title>Yuyang Tu</title>
+  <link rel="stylesheet" href="research/home.css">
+  <script src="research/media.js" defer></script>
 </head>
 <body>
-    <div class="header">
-        <h1>Yuyang Tu</h1>
-        <img src="images/avatar.jpg" alt="Avatar">
+  <header class="profile">
+    <h1>Yuyang Tu</h1>
+    <img class="avatar" src="images/avatar.jpg" width="300" height="220" alt="Yuyang Tu">
+    <p class="profile-role">PhD candidate &middot; University of Hamburg</p>
+    <p class="profile-intro">My research is about robotics and AI.<br>This website brings together my research projects and demonstrations.</p>
+    <a class="contact-link" href="mailto:tu@informatik.uni-hamburg.de"><img class="icon" src="research/icons/mail.svg" width="20" height="20" alt="" aria-hidden="true">tu@informatik.uni-hamburg.de</a>
+  </header>
+  <main class="container">
+    <div class="section-heading">
+      <div><span class="eyebrow">PROJECTS &amp; PUBLICATIONS</span><h2>Current Research</h2></div>
+      <button class="preview-toggle" type="button" data-preview-toggle>Pause previews</button>
     </div>
+    <div class="project-list"><article class="list-item publication featured" data-category="publication">
+      <a href="PCMS-Connect/" class="thumbnail" aria-label="View From Manipulability to Motion: Learning Point-Cloud-Constrained Proposals for Narrow-Space Planning">
+        <video width="320" height="200" autoplay loop muted playsinline preload="metadata" poster="PCMS-Connect/assets/hardware.jpg" aria-label="Diana 7 moving through a narrow rack">
+          <source src="PCMS-Connect/assets/hardware.mp4" type="video/mp4">
+          Watch the project demonstration.
+        </video>
+        <span class="thumbnail-hint"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span>View project</span><img class="icon" src="research/icons/arrow.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+      </a>
+      <div class="project-description">
+        <div class="badge submission"><img class="icon" src="research/icons/clock.svg" width="20" height="20" alt="" aria-hidden="true">Submitted to ICRA 2027</div>
+        <h3><a href="PCMS-Connect/">From Manipulability to Motion: Learning Point-Cloud-Constrained Proposals for Narrow-Space Planning</a></h3>
+        <p class="project-summary">Learning which local motions remain available to guide robot motion planning in narrow spaces.</p>
+        <p class="keywords">Motion Planning &middot; Point Clouds &middot; Constrained Manipulability</p>
+        <nav class="resource-links" aria-label="Resources for From Manipulability to Motion: Learning Point-Cloud-Constrained Proposals for Narrow-Space Planning"><a class="resource-link" href="PCMS-Connect/"><img class="icon" src="research/icons/globe.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Webpage</span></a>
+<a class="resource-link" href="PCMS-Connect/#demonstrations"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Demos</span></a>
+<span class="resource-link resource-pending" aria-label="Paper coming soon"><img class="icon" src="research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper coming soon</span></span></nav>
+      </div>
+    </article>
+<article class="list-item publication featured" data-category="publication">
+      <a href="Language6DPose/" class="thumbnail language-thumbnail" id="language-cover" aria-label="View Language-Embedded 6D Pose Estimation for Tool Manipulation">
+        <video width="640" height="450" data-play-on-view loop muted playsinline preload="metadata" poster="Language6DPose/assets/task-sequence.jpg" aria-label="Two tasks in sequence: hang the mug on the hook, then align the wrench with the nut">
+          <source src="Language6DPose/assets/task-sequence.mp4" type="video/mp4">
+          Watch the mug and wrench demonstrations.
+        </video>
+        <span class="thumbnail-hint"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span>View project</span><img class="icon" src="research/icons/arrow.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+      </a>
+      <div class="project-description">
+        <div class="badge published"><img class="icon" src="research/icons/award.svg" width="20" height="20" alt="" aria-hidden="true">IEEE RA-L 2025</div>
+        <h3><a href="Language6DPose/">Language-Embedded 6D Pose Estimation for Tool Manipulation</a></h3>
+        <p class="project-summary">Combining language and 3D geometry to estimate the pose of the functional part needed for a task.</p>
+        <p class="keywords">6D Pose Estimation &middot; Language &middot; Tool Manipulation</p>
+        <nav class="resource-links" aria-label="Resources for Language-Embedded 6D Pose Estimation for Tool Manipulation"><a class="resource-link" href="Language6DPose/"><img class="icon" src="research/icons/globe.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Webpage</span></a>
+<a class="resource-link" href="https://doi.org/10.1109/LRA.2025.3587559"><img class="icon" src="research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper</span></a>
+<a class="resource-link" href="Language6DPose/#demonstrations"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Demos</span></a>
+<a class="resource-link" href="https://language6dpose.github.io/"><img class="icon" src="research/icons/dataset.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Dataset</span></a></nav>
+      </div>
+    </article>
+<article class="list-item publication " data-category="publication">
+      <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail" aria-label="View ToolEENet: Tool Affordance 6D Pose Estimation">
+        <video width="320" height="200" autoplay loop muted playsinline preload="metadata" aria-label="Robotic hand using a hammer">
+          <source src="images/tooleenetpreview.mp4" type="video/mp4">
+          Watch the project demonstration.
+        </video>
+        <span class="thumbnail-hint"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span>View project</span><img class="icon" src="research/icons/arrow.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+      </a>
+      <div class="project-description">
+        <div class="badge published"><img class="icon" src="research/icons/award.svg" width="20" height="20" alt="" aria-hidden="true">IROS 2024 &middot; Oral (top 12%)</div>
+        <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
 
-    <div class="container">
-        <p>My name is Yuyang Tu. I am currently a PhD candidate at the University of Hamburg. </p>
-        <p>My research is about robotics and AI. This is a website to host my research project.</p>
-        <p>You can reach me by the email tu@informatik.uni-hamburg.de</p>
-        <h1>Current Research</h1>
+        <p class="keywords">6D Pose Estimation &middot; Multi-fingered Robotic Hand &middot; Tool Use</p>
+        <nav class="resource-links" aria-label="Resources for ToolEENet: Tool Affordance 6D Pose Estimation"><a class="resource-link" href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html"><img class="icon" src="research/icons/globe.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Webpage</span></a>
+<a class="resource-link" href="https://arxiv.org/pdf/2404.04193"><img class="icon" src="research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper</span></a>
+<a class="resource-link" href="https://www.youtube.com/watch?v=B-a8YhIv3kc"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Video</span></a></nav>
+      </div>
+    </article>
+<article class="list-item publication " data-category="publication">
+      <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail" aria-label="View PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM">
+        <video width="320" height="200" autoplay loop muted playsinline preload="metadata" aria-label="Object-in-hand pose estimation examples">
+          <source src="images/posefusionpreview.mp4" type="video/mp4">
+          Watch the project demonstration.
+        </video>
+        <span class="thumbnail-hint"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span>View project</span><img class="icon" src="research/icons/arrow.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+      </a>
+      <div class="project-description">
+        <div class="badge published"><img class="icon" src="research/icons/award.svg" width="20" height="20" alt="" aria-hidden="true">IROS 2023 &middot; Oral</div>
+        <h3><a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM</a></h3>
 
-        <div class="list-item publication" data-category="publication">
-            <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html" class="thumbnail">
-                <video width="320" height="240" autoplay loop muted playsinline>
-                    <source src="images/tooleenetpreview.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </a>
-            <div class="project-description">
-                <h3><a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">ToolEENet: Tool Affordance 6D Pose Estimation</a></h3>
-                <p>
-                    Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tool Use.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation (top 12%), IROS2024 &#9733;</i></font><br>
-                    <a href="https://yuyangtu.github.io/ToolEENet/projectToolEENet.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://arxiv.org/pdf/2404.04193">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://www.youtube.com/watch?v=B-a8YhIv3kc">Video</a>
-                </p>
-            </div>
-        </div>
+        <p class="keywords">6D Pose Estimation &middot; Multi-fingered Robotic Hand &middot; Tactile Sensing</p>
+        <nav class="resource-links" aria-label="Resources for PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM"><a class="resource-link" href="https://elevenjiang1.github.io/ObjectInHand-Dataset/"><img class="icon" src="research/icons/globe.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Webpage</span></a>
+<a class="resource-link" href="https://arxiv.org/pdf/2304.04523"><img class="icon" src="research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper</span></a>
+<a class="resource-link" href="https://www.youtube.com/watch?v=EmsGwhWU5y8"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Video</span></a></nav>
+      </div>
+    </article>
+<article class="list-item publication " data-category="publication">
+      <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail" aria-label="View Learning Friction Model for Magnet-actuated Tethered Capsule Robot">
+        <video width="320" height="200" autoplay loop muted playsinline preload="metadata" aria-label="Magnet-actuated tethered capsule robot demonstration">
+          <source src="images/capsulepreview.mp4" type="video/mp4">
+          Watch the project demonstration.
+        </video>
+        <span class="thumbnail-hint"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span>View project</span><img class="icon" src="research/icons/arrow.svg" width="20" height="20" alt="" aria-hidden="true"></span>
+      </a>
+      <div class="project-description">
+        <div class="badge published"><img class="icon" src="research/icons/award.svg" width="20" height="20" alt="" aria-hidden="true">ICRA 2022 &middot; Oral</div>
+        <h3><a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Learning Friction Model for Magnet-actuated Tethered Capsule Robot</a></h3>
 
-        <div class="list-item publication" data-category="publication">
-            <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/" class="thumbnail">
-                <video width="320" height="240" autoplay loop muted playsinline>
-                    <source src="images/posefusionpreview.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </a>
-            <div class="project-description">
-                <h3><a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">PoseFusion: Robust Object-in-Hand Pose Estimation with SelectLSTM</a></h3>
-                <p>
-                    Keywords: 6D Pose Estimation, Multi-fingered Robotic Hand, Tactile sensing.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation, IROS2023 &#9733;</i></font><br>
-                    <a href="https://elevenjiang1.github.io/ObjectInHand-Dataset/">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://arxiv.org/pdf/2304.04523">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://www.youtube.com/watch?v=EmsGwhWU5y8">Video</a>
-                </p>
-            </div>
-        </div>
-
-        <div class="list-item publication" data-category="publication">
-            <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html" class="thumbnail">
-                <video width="320" height="240" autoplay loop muted playsinline>
-                    <source src="images/capsulepreview.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
-                </video>
-            </a>
-            <div class="project-description">
-                <h3><a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Learning Friction Model for Magnet-actuated Tethered Capsule Robot</a></h3>
-                <p>
-                    Keywords: tethered capsule robot, magnetic actuation, friction model.<br>
-                    <font color="49bf9"><i>&#9733; Oral Presentation, ICRA2022 &#9733;</i></font><br>
-                    <a href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html">Webpage</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://ieeexplore.ieee.org/document/9811587">PDF</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-                    <a href="https://www.youtube.com/watch?v=FCPhjHXal3M&t=4s">Video</a>
-                </p>
-            </div>
-        </div>
-
-        <p>Stay tuned for more updates!</p>
-    </div>
+        <p class="keywords">Tethered Capsule Robot &middot; Magnetic Actuation &middot; Friction Model</p>
+        <nav class="resource-links" aria-label="Resources for Learning Friction Model for Magnet-actuated Tethered Capsule Robot"><a class="resource-link" href="https://yuyangtu.github.io/CapsuleRobot/projectCapsuleRobot.html"><img class="icon" src="research/icons/globe.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Webpage</span></a>
+<a class="resource-link" href="https://ieeexplore.ieee.org/document/9811587"><img class="icon" src="research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper</span></a>
+<a class="resource-link" href="https://www.youtube.com/watch?v=FCPhjHXal3M&t=4s"><img class="icon" src="research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Video</span></a></nav>
+      </div>
+    </article></div>
+    <footer class="home-footer">More research to come.</footer>
+  </main>
 </body>
 </html>
-
-
-
-
-
-

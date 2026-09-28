@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>From Manipulability to Motion | Yuyang Tu</title>
+  <meta name="description" content="PCMS-Connect learns point-cloud-constrained local proposals for robot motion planning in narrow spaces, with simulation and Diana 7 demonstrations.">
+  <link rel="canonical" href="https://yuyangtu.github.io/PCMS-Connect/">
+  <link rel="stylesheet" href="../research/project.css">
+  <script src="../research/media.js" defer></script>
+</head>
+<body>
+<main>
+  <a class="back" href="../">&larr; Yuyang Tu &middot; All research</a>
+  <header>
+    <h1>From Manipulability to Motion:<br>Learning Point-Cloud-Constrained Proposals for Narrow-Space Planning</h1>
+    <p class="project-kicker">PCMS-Connect</p><p class="badge submission"><img class="icon" src="../research/icons/clock.svg" width="20" height="20" alt="" aria-hidden="true">Submitted to ICRA 2027</p>
+    <nav class="resource-links resource-tiles" aria-label="Project resources"><span class="resource-link resource-tile resource-pending" aria-label="Paper coming soon"><img class="icon" src="../research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper<small>Coming soon</small></span></span>
+<a class="resource-link resource-tile" href="#demonstrations"><img class="icon" src="../research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Demonstrations<small>Simulation & hardware</small></span></a>
+<a class="resource-link resource-tile" href="#method"><img class="icon" src="../research/icons/method.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Method<small>Core idea</small></span></a></nav>
+  </header>
+  <p class="intro">Being closer to a goal does not mean a robot has room to move toward it. PCMS-Connect learns which local motions remain available and uses this information to guide motion planning in narrow spaces.</p>
+  <figure class="overview">
+    <img src="assets/overview.jpg" width="1800" height="820" alt="Diana 7 in a narrow rack, with schematic point-cloud and constrained manipulability surface overlays illustrating observe, predict, and extend.">
+    <figcaption>Observe the obstacle point cloud, predict a constrained manipulability surface, and propose a local motion. Surface and point-cloud overlays are schematic.</figcaption>
+  </figure>
+  <h2 id="method">Core idea</h2>
+  <div class="steps">
+    <article><h3>1. Describe available motion</h3><p>Directional bounds capture how joint limits, the robot itself, and nearby obstacles constrain local motion.</p></article>
+    <article><h3>2. Propose an extension</h3><p>A compact learned predictor helps choose a direction and step length, balancing task progress with available motion.</p></article>
+    <article><h3>3. Check and connect</h3><p>Every proposed edge is geometrically checked before it extends the bidirectional RRT-Connect trees.</p></article>
+  </div>
+  <h2 id="demonstrations">Simulation and hardware</h2>
+  <div class="preview-controls"><button type="button" data-preview-toggle>Pause previews</button></div>
+  <figure class="wide-demo">
+    <h3>Narrow-space planning in simulation</h3>
+    <video autoplay loop muted playsinline controls preload="metadata" poster="assets/simulation.jpg" aria-label="Panda narrow-shelf simulation comparing PCMS-Connect and goal-distance guidance">
+      <source src="assets/simulation.mp4" type="video/mp4">
+      <a href="assets/simulation.mp4">Watch the simulation demonstration</a>
+    </video>
+    <figcaption>A thin-shelf scene from the Panda benchmark. This clip is one qualitative example; aggregate results are reported below. Source replay at 2.5&times; speed.</figcaption>
+  </figure>
+  <figure class="hardware-demo">
+    <h3>Real-robot deployment on Diana 7</h3>
+    <video autoplay loop muted playsinline controls preload="metadata" poster="assets/hardware.jpg" aria-label="Diana 7 moving through narrow rack openings in two physical demonstrations">
+      <source src="assets/hardware.mp4" type="video/mp4">
+      <a href="assets/hardware.mp4">Watch the hardware demonstration</a>
+    </video>
+    <figcaption>Two excerpts showing motion through narrow rack openings. The proposal mechanism transfers to Diana 7 using a predictor trained for that robot. Source replay at 3&times; speed.</figcaption>
+  </figure>
+  <h2>Results at a glance</h2>
+  <div class="results">
+    <p><strong>95.0% planning success</strong> (171/180 trials), compared with 86.1% (155/180) for goal-distance guidance across four families of Panda benchmark scenes.</p>
+    <p><strong>39.8% lower online planning time</strong> on the 79 paired common successes in a 90-trial serial subset.</p>
+  </div>
+  <p class="caption">The Diana 7 demonstrations are qualitative hardware results, separate from the Panda benchmark statistics. Learned bounds guide candidate generation; finite edges still require geometric validation. The paper will be made available here at a later date.</p>
+  <footer><a href="../">Back to Yuyang Tu&rsquo;s homepage</a></footer>
+</main>
+</body>
+</html>
