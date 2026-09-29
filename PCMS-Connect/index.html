@@ -1,60 +1,70 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>From Manipulability to Motion | Yuyang Tu</title>
-  <meta name="description" content="PCMS-Connect learns point-cloud-constrained local proposals for robot motion planning in narrow spaces, with simulation and Diana 7 demonstrations.">
-  <link rel="canonical" href="https://yuyangtu.github.io/PCMS-Connect/">
-  <link rel="stylesheet" href="../research/project.css">
-  <script src="../research/media.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<title>From Manipulability to Motion | Yuyang Tu</title>
+<link rel="canonical" href="https://yuyangtu.github.io/PCMS-Connect/">
+<meta name="description" content="PCMS-Connect: learned point-cloud-constrained motion proposals, Panda benchmarks, and Diana 7 hardware demonstrations.">
+<style>
+:root{--ink:#202c38;--muted:#66717b;--rust:#ad5a45;--paper:#f8f7f4;--line:#dcdedc;--lavender:#a699bd}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:26px}body{margin:0;color:var(--ink);background:white;font:16px/1.6 Arial,Helvetica,sans-serif}a{color:inherit;text-decoration:none}a:focus-visible,button:focus-visible{outline:3px solid var(--rust);outline-offset:5px}img,video{display:block;max-width:100%;height:auto}figure{margin:0}p{margin:0 0 1em}.wrap{max-width:1160px;margin:auto;padding:0 40px}nav{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:25px 0;border-bottom:1px solid var(--line)}.brand{font-weight:750;font-size:18px;letter-spacing:-.6px}.brand span{color:var(--rust)}.navlinks{display:flex;gap:24px;font-size:13px;color:var(--muted)}.eyebrow{font-size:11px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--rust)}.hero{padding:70px 0 42px;text-align:center}h1{font-size:clamp(38px,5.2vw,66px);line-height:1.04;letter-spacing:-2.8px;margin:22px 0 20px;font-weight:750}h1 em{font-style:normal;color:var(--rust)}.subtitle{max-width:780px;margin:0 auto;color:var(--muted);font-size:20px;line-height:1.45}.buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin:28px 0 38px}.btn{border:1px solid var(--line);border-radius:5px;padding:10px 22px;font-size:13px;font-weight:700;background:white}.btn.primary{background:var(--ink);border-color:var(--ink);color:white}.btn:hover{border-color:var(--rust)}.concept{width:100%;max-width:930px;margin:auto}.note{font-size:12px;color:var(--muted);line-height:1.6}.hero .note{margin:12px auto 0;max-width:740px}.stats{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:26px 0;margin:14px 0 0;gap:30px}.stat strong{font-size:36px;letter-spacing:-1.6px;line-height:1.2;display:block}.stat span{font-size:13px;display:block;margin-top:8px}.stat small{color:var(--muted);font-size:11px;display:block;max-width:265px}.stat .accent{color:var(--rust)}section{padding:68px 0}section+section{border-top:1px solid var(--line)}.sectiontop{display:flex;justify-content:space-between;align-items:baseline;gap:30px;margin-bottom:25px}h2{font-size:31px;letter-spacing:-1px;line-height:1.15;margin:9px 0 0}h3{font-size:18px;letter-spacing:-.3px;line-height:1.3;margin:0 0 9px}.sectiontop p{max-width:470px;font-size:14px;color:var(--muted);margin:0}.film{width:100%;aspect-ratio:16/9;border:1px solid var(--line);border-radius:6px;background:var(--paper)}.filmbottom{display:flex;justify-content:space-between;gap:20px;margin-top:12px}.textlink{font-size:12px;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;margin-top:28px}.step{border-top:2px solid var(--line);padding:18px 0 0}.step b{font-size:11px;color:var(--rust);display:block;margin-bottom:18px;letter-spacing:1px}.step p{font-size:13px;color:var(--muted);margin:0}.media-panel{background:var(--paper);border-radius:6px;border:1px solid #eeefec;overflow:hidden}.media-panel img{width:100%}.caption{margin:16px 0 0;display:flex;gap:24px;align-items:baseline}.caption p{font-size:13px;line-height:1.65;color:var(--muted);margin:0}.caption h3{min-width:175px}.secondary-demo{margin-top:35px}details summary{cursor:pointer;list-style:none;font-size:14px;font-weight:bold;padding:16px 0;border-bottom:1px solid var(--line)}details summary::after{content:'+';float:right;color:var(--rust)}details[open] summary::after{content:'−'}details .media-panel{margin-top:18px}.hardware{display:grid;grid-template-columns:1fr 1fr;gap:24px}.hardware img{width:100%;aspect-ratio:16/9;object-fit:contain;background:#f4f5f7}.hardware h3{margin-top:20px}.hardware p{font-size:13px;color:var(--muted)}.hardware-note{margin-top:25px;padding:17px 21px;background:var(--paper);font-size:12px;color:var(--muted);border-left:2px solid var(--lavender)}.codegrid{display:grid;grid-template-columns:1fr 1.1fr;gap:54px;margin-top:26px}.codegrid p{font-size:14px;color:var(--muted)}pre{margin:0;padding:26px;background:var(--ink);color:#f5f5f2;border-radius:5px;overflow-x:auto;font:12px/1.9 Consolas,monospace}.codegrid .btn{display:inline-block;margin-top:6px}footer{padding:27px 0 40px;border-top:1px solid var(--line);font-size:11px;color:var(--muted);display:flex;justify-content:space-between;gap:20px}footer b{font-weight:600} @media(max-width:700px){.wrap{padding:0 22px}.navlinks{gap:14px;font-size:11px}.hero{padding-top:46px}h1{letter-spacing:-1.6px}.subtitle{font-size:17px}.stats{gap:14px}.stat strong{font-size:29px}.stat span{font-size:12px}.stat small{font-size:10px}section{padding:43px 0}.sectiontop,.caption{display:block}.sectiontop p{margin-top:16px}.steps{grid-template-columns:1fr 1fr;gap:24px}.hardware,.codegrid{grid-template-columns:1fr;gap:26px}.caption h3{margin-bottom:7px}.filmbottom{display:block}.filmbottom .textlink{display:inline-block;margin-top:8px}.navlinks .optional{display:none}footer{display:block}footer span{display:block;margin-top:5px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
 </head>
 <body>
-<main>
-  <a class="back" href="../">&larr; Yuyang Tu &middot; All research</a>
-  <header>
-    <h1>From Manipulability to Motion:<br>Learning Point-Cloud-Constrained Proposals for Narrow-Space Planning</h1>
-    <p class="project-kicker">PCMS-Connect</p><p class="badge submission"><img class="icon" src="../research/icons/clock.svg" width="20" height="20" alt="" aria-hidden="true">Submitted to ICRA 2027</p>
-    <nav class="resource-links resource-tiles" aria-label="Project resources"><span class="resource-link resource-tile resource-pending" aria-label="Paper coming soon"><img class="icon" src="../research/icons/paper.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Paper<small>Coming soon</small></span></span>
-<a class="resource-link resource-tile" href="#demonstrations"><img class="icon" src="../research/icons/play.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Demonstrations<small>Simulation & hardware</small></span></a>
-<a class="resource-link resource-tile" href="#method"><img class="icon" src="../research/icons/method.svg" width="20" height="20" alt="" aria-hidden="true"><span class="resource-label">Method<small>Core idea</small></span></a></nav>
-  </header>
-  <p class="intro">Being closer to a goal does not mean a robot has room to move toward it. PCMS-Connect learns which local motions remain available and uses this information to guide motion planning in narrow spaces.</p>
-  <figure class="overview">
-    <img src="assets/overview.jpg" width="1800" height="820" alt="Diana 7 in a narrow rack, with schematic point-cloud and constrained manipulability surface overlays illustrating observe, predict, and extend.">
-    <figcaption>Observe the obstacle point cloud, predict a constrained manipulability surface, and propose a local motion. Surface and point-cloud overlays are schematic.</figcaption>
-  </figure>
-  <h2 id="method">Core idea</h2>
-  <div class="steps">
-    <article><h3>1. Describe available motion</h3><p>Directional bounds capture how joint limits, the robot itself, and nearby obstacles constrain local motion.</p></article>
-    <article><h3>2. Propose an extension</h3><p>A compact learned predictor helps choose a direction and step length, balancing task progress with available motion.</p></article>
-    <article><h3>3. Check and connect</h3><p>Every proposed edge is geometrically checked before it extends the bidirectional RRT-Connect trees.</p></article>
-  </div>
-  <h2 id="demonstrations">Simulation and hardware</h2>
-  <div class="preview-controls"><button type="button" data-preview-toggle>Pause previews</button></div>
-  <figure class="wide-demo">
-    <h3>Narrow-space planning in simulation</h3>
-    <video autoplay loop muted playsinline controls preload="metadata" poster="assets/simulation.jpg" aria-label="Panda narrow-shelf simulation comparing PCMS-Connect and goal-distance guidance">
-      <source src="assets/simulation.mp4" type="video/mp4">
-      <a href="assets/simulation.mp4">Watch the simulation demonstration</a>
-    </video>
-    <figcaption>A thin-shelf scene from the Panda benchmark. This clip is one qualitative example; aggregate results are reported below. Source replay at 2.5&times; speed.</figcaption>
-  </figure>
-  <figure class="hardware-demo">
-    <h3>Real-robot deployment on Diana 7</h3>
-    <video autoplay loop muted playsinline controls preload="metadata" poster="assets/hardware.jpg" aria-label="Diana 7 moving through narrow rack openings in two physical demonstrations">
-      <source src="assets/hardware.mp4" type="video/mp4">
-      <a href="assets/hardware.mp4">Watch the hardware demonstration</a>
-    </video>
-    <figcaption>Two excerpts showing motion through narrow rack openings. The proposal mechanism transfers to Diana 7 using a predictor trained for that robot. Source replay at 3&times; speed.</figcaption>
-  </figure>
-  <h2>Results at a glance</h2>
-  <div class="results">
-    <p><strong>95.0% planning success</strong> (171/180 trials), compared with 86.1% (155/180) for goal-distance guidance across four families of Panda benchmark scenes.</p>
-    <p><strong>39.8% lower online planning time</strong> on the 79 paired common successes in a 90-trial serial subset.</p>
-  </div>
-  <p class="caption">The Diana 7 demonstrations are qualitative hardware results, separate from the Panda benchmark statistics. Learned bounds guide candidate generation; finite edges still require geometric validation. The paper will be made available here at a later date.</p>
-  <footer><a href="../">Back to Yuyang Tu&rsquo;s homepage</a></footer>
-</main>
+<div class="wrap">
+<nav aria-label="Main navigation"><a class="brand" href="../">← Yuyang Tu <span>/</span> Research</a><div class="navlinks"><a href="#film">Video</a><a href="#method" class="optional">Method</a><a href="#experiments">Experiments</a><a href="https://anonymous.4open.science/r/PCMS-Connect-4808/RUNNING.md">Code →</a></div></nav>
+<header class="hero" id="top">
+<div class="eyebrow">PCMS-Connect · Submitted to ICRA 2027</div>
+<h1>From Manipulability<br>to <em>Motion.</em></h1>
+<p class="subtitle">Learning Point-Cloud-Constrained Proposals<br>for Narrow-Space Planning</p>
+<div class="buttons"><a class="btn primary" href="#film">▶ &nbsp; Watch the video</a><a class="btn" href="https://anonymous.4open.science/r/PCMS-Connect-4808/RUNNING.md">Run the code →</a><a class="btn" href="#experiments">Explore the results ↓</a></div>
+<img class="concept" src="media/concept.jpg" width="1800" height="821" alt="Diana 7 reaching into a wheeled rack: obstacle points constrain the manipulability surface and a selected direction extends toward the red-block goal.">
+<p class="note">Directional motion bounds guide both the direction and length of local joint-space proposals.<br>Conceptual surface overlays illustrate the mechanism on the physical setup.</p>
+</header>
+<div class="stats" aria-label="Main benchmark results">
+<div class="stat"><strong class="accent">95.0%</strong><span>Planning success</span><small>171/180 eligible Panda trials; goal-distance guidance: 155/180 (86.1%).</small></div>
+<div class="stat"><strong>39.8%</strong><span>Lower online planning time</span><small>Against goal-distance guidance on 79 paired serial trials solved by both methods.</small></div>
+<div class="stat"><strong>2 robots</strong><span>Simulation to hardware</span><small>Panda benchmark evaluation and qualitative Diana 7 deployment with a robot-specific model.</small></div>
+</div>
+<section id="film"><span id="demonstrations"></span>
+<div class="sectiontop"><div><div class="eyebrow">01 / In motion</div><h2>See the planner at work.</h2></div><p>Five simulated planning cases followed by physical rack-reaching experiments on Diana 7.</p></div>
+<video class="film" controls playsinline preload="none" poster="media/film-poster.jpg" aria-label="PCMS-Connect complete demonstration video" src="media/project-film.mp4">Your browser does not support embedded video. <a href="media/project-film.mp4">Open the MP4 video.</a></video>
+<div class="filmbottom"><span class="note">Simulation comparisons use the same scene and goal for all three methods.</span><a class="textlink" href="media/project-film.mp4" target="_blank" rel="noopener noreferrer">Open video in a new tab ↗</a></div>
+</section>
+<section id="method">
+<div class="sectiontop"><div><div class="eyebrow">02 / The mechanism</div><h2>Local capability becomes a search edge.</h2></div><p>The Point-Cloud-Constrained Manipulability Surface describes directional motion bounds at the current robot configuration.</p></div>
+<div class="steps">
+<article class="step"><b>01 — OBSERVE</b><h3>State + obstacle points</h3><p>Combine the current joint configuration with nearby obstacle observations.</p></article>
+<article class="step"><b>02 — PREDICT</b><h3>Directional bounds</h3><p>A shared predictor approximates constrained radial bounds along joint-velocity rays.</p></article>
+<article class="step"><b>03 — PROPOSE</b><h3>Direction + step length</h3><p>Combine available motion with task progress to construct finite joint-space candidates.</p></article>
+<article class="step"><b>04 — EXTEND</b><h3>Validate + insert</h3><p>Geometrically validate candidate edges before extending the bidirectional search trees.</p></article>
+</div>
+</section>
+<section id="experiments">
+<div class="sectiontop"><div><div class="eyebrow">03 / Panda benchmark</div><h2>Three planners. The same task.</h2></div><p>Matched local RRT-Connect, goal-distance guidance, and PCMS-Connect, shown alongside the predicted surface at the current pose.</p></div>
+<figure><div class="media-panel"><img src="media/planning-comparison.gif" width="1000" height="563" loading="lazy" alt="Animated three-way comparison for the thin-shelf Panda task, including the changing predicted surface."></div><figcaption class="caption"><h3>Reaching into a thin shelf</h3><p>The lower panel follows changes in the learned directional bounds. The arrow indicates the replayed motion direction. Shown clips are selected examples; aggregate results are reported above.</p></figcaption></figure>
+<details class="secondary-demo"><summary>Another view: navigating a narrow passage</summary><div class="media-panel"><img src="media/narrow-passage.gif" width="1000" height="563" loading="lazy" alt="Animated comparison of three planners traversing a narrow passage."></div></details>
+<p class="note" style="margin-top:19px">Simulation footage replays saved joint paths. The displayed run time combines recorded online planning time and velocity-retimed path replay; it is not a measured hardware execution time.</p>
+</section>
+<section id="hardware">
+<div class="sectiontop"><div><div class="eyebrow">04 / Diana 7 hardware</div><h2>The same mechanism, a second robot.</h2></div><p>Qualitative experiments use RealSense D435i point clouds and one fixed, robot-specific trained model across the tested rack configurations.</p></div>
+<div class="hardware">
+<figure><div class="media-panel"><img src="media/diana-rack.gif" width="720" height="405" loading="lazy" alt="Diana 7 physically reaching toward a red block inside a wheeled rack."></div><figcaption><h3>Reach into the rack</h3><p>The red block defines the goal. Experiments vary the rack placement and the goal position.</p></figcaption></figure>
+<figure><div class="media-panel"><img src="media/diana-flipped.gif" width="900" height="506" loading="lazy" alt="Two Diana 7 executions with the rack flipped; the right-hand setup is also lower."></div><figcaption><h3>Flip the rack. Reduce the clearance.</h3><p>Flipping the rack creates a narrower opening. The right-hand configuration also lowers the rack height.</p></figcaption></figure>
+</div>
+<div class="hardware-note">These demonstrations support qualitative cross-robot deployment of the proposal mechanism. Hardware demonstrations are separate from the 180-trial Panda benchmark statistics.</div>
+</section>
+<section id="code">
+<div class="eyebrow">05 / Try it</div><h2>Pretrained models. A small runnable release.</h2>
+<div class="codegrid"><div><p>The code package includes model weights, four Panda scene families, the shared point-cloud collision interface, and a path viewer.</p><p>Python 3.10+ · CPU inference · No training required</p><a class="btn" href="https://anonymous.4open.science/r/PCMS-Connect-4808/RUNNING.md">Installation &amp; reproduction guide →</a></div><pre><code>python -m pip install -r requirements.txt
+
+python run.py --method ours
+python run.py --method goal_distance
+python run.py --method rrt_connect</code></pre></div>
+</section>
+<footer><b>PCMS-Connect · From Manipulability to Motion</b><span>Yuyang Tu · Research project · Paper coming soon</span></footer>
+</div>
 </body>
 </html>
